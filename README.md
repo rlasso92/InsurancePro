@@ -11,3 +11,4 @@
 
 - loglevel: minimal lightweight simple logging
 - dotenv: loads environment variables from a `.env` file into `process.env`
+- lint: eslitn + prettier
