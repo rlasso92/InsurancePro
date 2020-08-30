@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "tsc --skipLibCheck --watch",
-    "dev": "nodemon --quiet --watch dist --exec node dist/index.js",
+    "dev": "nodemon --quiet --watch dist --exec 'clear;node dist/index.js'",
     "build": "tsc",
     "start": "cross-env NODE_ENV=production node dist/index.js",
     "lint": "eslint '*/**/*.ts' --quiet .",
