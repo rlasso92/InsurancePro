@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "watch": "tsc --skipLibCheck --watch",
-    "dev": "nodemon --quiet",
+    "dev": "nodemon --quiet --watch dist --exec node dist/index.js",
     "build": "tsc",
     "start": "cross-env NODE_ENV=production node dist/index.js",
-    "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
+    "lint": "eslint '*/**/*.ts' --quiet .",
+    "lint:fix": "yarn lint --fix",
+    "format": "prettier --write --loglevel silent './**/*.{json,js}'"
   },
   "keywords": [
     "node",
@@ -40,7 +42,7 @@
     }
   },
   "lint-staged": {
-    "*/**/*.{js,ts,tsx}": "eslint --fix",
-    "*/**/*.{json|css|scss|html}": "prettier --write"
+    "*/**/*.ts": "yarn lint:fix",
+    "*/**/*.{json,js}": "yarn format"
   }
 }
